@@ -128,7 +128,7 @@ export const PersonnelManagementCard = ({
                   className="rounded-full mr-4"
                   src={
                     imageSrc
-                      ? `http://localhost:8000${imageSrc}`
+                      ? `http://web:8000${imageSrc}`
                       : "http://i.pravatar.cc/304"
                   }
                   alt={alt ?? `Profile picture of ${name}`}

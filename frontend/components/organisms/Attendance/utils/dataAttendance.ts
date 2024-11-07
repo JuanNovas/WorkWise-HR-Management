@@ -8,7 +8,7 @@ export const getAttendanceList = async () => {
         id: entry.employee_id,
         name: `${entry.first_name} ${entry.last_name}`,
         cargo: entry.role,
-        imageSrc: `http://localhost:8000${entry.profile_picture}`, // Ruta para la imagen
+        imageSrc: `http://web:8000${entry.profile_picture}`, // Ruta para la imagen
         alt: `${entry.first_name} ${entry.last_name}`,
         attendances: entry.days_worked,
         absences: entry.inassistances,

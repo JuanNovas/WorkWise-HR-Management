@@ -135,7 +135,7 @@ console.log('imagen', imageSrc)
             ) : (
               <Image
                 className="rounded-full"
-                src={imageSrc ? `http://localhost:8000${imageSrc}` : "http://i.pravatar.cc/304"}
+                src={imageSrc ? `http://web:8000${imageSrc}` : "http://i.pravatar.cc/304"}
                 alt={alt ?? `Profile picture of ${name} ${lastName}`}
                 width={50}
                 height={50}
@@ -230,7 +230,7 @@ console.log('imagen', imageSrc)
             ) : (
               <Image
                 className="rounded-full"
-                src={imageSrc ? `http://localhost:8000${imageSrc}` : "http://i.pravatar.cc/304"}
+                src={imageSrc ? `http://web:8000${imageSrc}` : "http://i.pravatar.cc/304"}
                 alt={alt ?? `Profile picture of ${name}`}
                 width={30}
                 height={30}

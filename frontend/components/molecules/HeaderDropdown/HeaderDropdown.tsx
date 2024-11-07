@@ -34,7 +34,7 @@ export const HeaderDropdown = () => {
   return (
     <div className="flex items-center gap-3">
       <Avatar className="w-10 h-10 rounded-full">
-        <img src={user ? `http://localhost:8000${user.profile_picture}` : "https://i.pravatar.cc/300"} alt="Usuario" />
+        <img src={user ? `http://web:8000${user.profile_picture}` : "https://i.pravatar.cc/300"} alt="Usuario" />
       </Avatar>
       <p className="max-lg:hidden">{user ? user.first_name : ""}</p>
       <DropdownMenu>
