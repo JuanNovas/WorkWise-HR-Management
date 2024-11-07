@@ -38,7 +38,7 @@ services:
       - postgres_data:/var/lib/postgresql/data
 
   front:
-      build: /frontend
+      build: ./frontend
       container_name: next_app
       ports:
         - "3000:3000"
