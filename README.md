@@ -55,7 +55,7 @@ Make sure you have **Docker** installed. If you don't have it, click [here](http
 
 3. **Visit the application**:
    Open your browser and access:  
-   🌐 [http://localhost:3000](http://localhost:3000)
+   🌐 [http://localhost:3000/dashboard](http://localhost:3000/dashboard)
 
 And that's it! 🎉 Your application will be running in your local environment.
 
