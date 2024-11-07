@@ -9,32 +9,32 @@ import { ChevronRightIcon, ChevronLeftIcon } from "lucide-react";
 
 const Sidebar: React.FC = () => {
   const [isExpanded, setIsExpanded] = useState(true); // Por defecto, expandido
-  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth); // Tamaño de la ventana
+  const [windowWidth, setWindowWidth] = useState<number>(0); // Inicializa en 0 para evitar el uso de `window` en el servidor
 
-  // Maneja el cambio de tamaño de la ventana
-  const handleResize = () => {
-    setWindowWidth(window.innerWidth);
-  };
-
-  // useEffect para agregar y limpiar el event listener
+  // Usa `useEffect` para actualizar el tamaño de la ventana solo en el cliente
   useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    setWindowWidth(window.innerWidth); // Establece el ancho inicial cuando el componente se monta en el cliente
     window.addEventListener("resize", handleResize);
+
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
 
-  // Actualiza el estado de isExpanded según el tamaño de la ventana
+  // Cambia `isExpanded` en función del tamaño de la ventana
   useEffect(() => {
     if (windowWidth <= 1024) {
-      setIsExpanded(false); // Colapsa en pantallas menores o iguales a 1024px
+      setIsExpanded(false);
     } else {
-      setIsExpanded(true); // Expande en pantallas mayores a 1024px
+      setIsExpanded(true);
     }
   }, [windowWidth]);
 
   const toggleSidebar = () => {
-    windowWidth <= 1024 && setIsExpanded(!isExpanded);
+    if (windowWidth <= 1024) {
+      setIsExpanded(!isExpanded);
+    }
   };
 
   return (
