@@ -23,7 +23,6 @@ export const metadata: Metadata = {
   title: "WorkWise",
   description:
     "Optimiza y gestiona eficientemente los recursos humanos con WorkWise, la solución inteligente para simplificar y mejorar la administración del talento en tu organización.",
-  viewport: "width=device-width, initial-scale=1",
   robots: {
     index: true,
     follow: true,
@@ -33,6 +32,9 @@ export const metadata: Metadata = {
     icon: "icons/workwise.svg",
   },
 };
+
+// Mover el viewport fuera de `metadata`
+export const viewport = "width=device-width, initial-scale=1";
 
 export default function RootLayout({
   children,
